@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-robo
+  labels:
+    app: user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user
+  template:
+    metadata:
+      labels:
+        app: user
+    spec:
+      containers:
+      - name: user-robo
+        image: primepossum/user-robo
+        ports:
+        - containerPort: 8080
+        env:
+        - name: REDIS_HOST
+          value: 
+        - name: MONGO_URL
+          value: 
+        - name: MONGO
+          value: "true"

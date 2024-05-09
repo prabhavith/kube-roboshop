@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-robo
+  labels:
+    app: cart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cart
+  template:
+    metadata:
+      labels:
+        app: cart
+    spec:
+      containers:
+      - name: cart-robo
+        image: primepossum/cart-robo
+        ports:
+        - containerPort: 8080
+        env:
+        - name: REDIS_HOST
+          value:
+        - name: CATALOGUE_HOST
+          value: catalogue
+        - name: CATALOGUE_PORT
+          value: 80

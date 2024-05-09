@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-robo
+  labels:
+    app: payment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment
+  template:
+    metadata:
+      labels:
+        app: payment
+    spec:
+      containers:
+      - name: payment-robo
+        image: primepossum/payment-robo
+        ports:
+        - containerPort: 8080
+        env:
+        - name: CART_HOST
+          value: cart
+        - name: CART_PORT
+          value: 80
+        - name: USER_HOST
+          value: user
+        - name: USER_PORT
+          value: 80
+        - name: AMQP_HOST
+          value:
+        - name: AMQP_USER
+          value:
+        - name: AMQP_PASS
+          value: 

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalogue-shipping
+  labels:
+    app: shipping
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shipping
+  template:
+    metadata:
+      labels:
+        app: shipping
+    spec:
+      containers:
+      - name: shipping-robo
+        image: primepossum/shipping-robo
+        ports:
+        - containerPort: 8080
+        env:
+        - name: CART_ENDPOINT
+          value: cart
+        - name: DB_HOST
+          value: 
+
