@@ -21,6 +21,6 @@ spec:
         - containerPort: 8080
         env:
         - name: MONGO_URL
-          value: "mongodb://admin1:roboshop12345@docdb-2024-05-08-10-19-55.cluster-cvi4kwsg04p5.us-east-1.docdb.amazonaws.com:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false"
+          value: {{ .Values.mango_url }}
         - name: MONGO
           value: "true"

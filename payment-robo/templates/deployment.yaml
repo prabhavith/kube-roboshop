@@ -29,8 +29,8 @@ spec:
         - name: USER_PORT
           value: 80
         - name: AMQP_HOST
-          value:
+          value: {{ .Values.mq_host }}
         - name: AMQP_USER
-          value:
+          value: {{ .Values.mq_user }}
         - name: AMQP_PASS
-          value: 
+          value: {{ .Values.mq_password }}

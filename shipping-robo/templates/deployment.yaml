@@ -23,5 +23,4 @@ spec:
         - name: CART_ENDPOINT
           value: cart
         - name: DB_HOST
-          value: 
-
+          value: {{ .Values.db_host }} 

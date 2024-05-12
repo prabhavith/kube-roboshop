@@ -23,8 +23,8 @@ spec:
         - containerPort: 8080
         env:
         - name: REDIS_HOST
-          value: 
+          value: {{ .Values.redis_host }}
         - name: MONGO_URL
-          value: 
+          value: {{ .Values.mongo_url }}
         - name: MONGO
           value: "true"

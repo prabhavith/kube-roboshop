@@ -21,7 +21,7 @@ spec:
         - containerPort: 8080
         env:
         - name: REDIS_HOST
-          value:
+          value: {{ .Values.redis_host }}
         - name: CATALOGUE_HOST
           value: catalogue
         - name: CATALOGUE_PORT
