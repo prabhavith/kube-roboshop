@@ -23,11 +23,11 @@ spec:
         - name: CART_HOST
           value: cart
         - name: CART_PORT
-          value: 80
+          value: "80"
         - name: USER_HOST
           value: user
         - name: USER_PORT
-          value: 80
+          value: "80"
         - name: AMQP_HOST
           value: {{ .Values.mq_host }}
         - name: AMQP_USER
