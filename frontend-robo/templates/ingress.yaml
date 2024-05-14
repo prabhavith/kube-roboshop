@@ -7,6 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
 spec:
+  ingressClassName: nginx
   rules:
   - host: frontend-dev.moderayprime.online
     http:
