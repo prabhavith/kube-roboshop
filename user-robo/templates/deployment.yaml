@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user-robo
-  namespace: argocd
   labels:
     app: user
 spec:
@@ -14,7 +13,6 @@ spec:
     metadata:
       labels:
         app: user
-      namespace: argocd
     spec:
       containers:
       - name: user-robo
